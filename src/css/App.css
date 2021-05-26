@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Quicksand;
+}
+
+.category {
+  cursor: pointer;
+}
+
+.category-container {
+  padding-left: 30px;
+  width: 300px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
