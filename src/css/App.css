@@ -8,6 +8,10 @@ body {
   font-family: Quicksand;
 }
 
+.header {
+  padding-left: 30px;
+}
+
 .category {
   cursor: pointer;
 }
@@ -15,6 +19,10 @@ body {
 .category-container {
   padding-left: 30px;
   width: 300px;
+}
+
+.joke-container {
+  padding-right: 30px;
 }
 
 .main {
