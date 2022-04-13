@@ -1,13 +1,13 @@
-import useFetch from "../useFetch";
+import useFetch from "../hooks/useFetch";
 
 const FetchedJoke = ({ chosenCategory }) => {
-  const joke = useFetch(
+  const { data: joke, isPending } = useFetch(
     `https://api.chucknorris.io/jokes/random?category=${chosenCategory}`
   );
   
   return (
     <div className="joke-container">
-        {!joke.data ? "Fetching joke..." : <h3>{joke.data.value}</h3>}
+        {isPending ? "Fetching joke..." : <h3 className="joke-text">{ joke.value }</h3>}
     </div>
   );
 };

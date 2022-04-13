@@ -1,11 +1,11 @@
 const Category = ({ category, setChosenCategory }) => {
+  
+  const handleClick = (e) => setChosenCategory(e.currentTarget.textContent);
+
   return (
-    <p
-      onClick={(e) => setChosenCategory(e.currentTarget.textContent)}
-      className="category"
-    >
+    <ul className="category" onClick={handleClick}>
       {category}
-    </p>
+    </ul>
   );
 };
 

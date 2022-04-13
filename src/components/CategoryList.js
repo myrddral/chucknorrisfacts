@@ -1,21 +1,20 @@
-import useFetch from "../useFetch";
+import useFetch from "../hooks/useFetch";
 import Category from "./Category";
 
-const CategoryList = (props) => {
-  const { data: categories } = useFetch(
-    "https://api.chucknorris.io/jokes/categories"
-  );
+const CategoryList = ({ setChosenCategory }) => {
+  const { data: categories, isPending, error } = useFetch("https://api.chucknorris.io/jokes/categories");
+
+  if (error) alert(error);
 
   return (
     <div className="category-container">
-      {!categories
+      {isPending
         ? "Fetching categories..."
         : categories.map((category) => (
             <Category
-              key={category}
-              category={category}
-              setChosenCategory={props.setChosenCategory}
-            />
+            key={category}
+            category={category}
+            setChosenCategory={setChosenCategory} />
           ))}
     </div>
   );
